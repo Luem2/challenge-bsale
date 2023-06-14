@@ -1,20 +1,16 @@
 import express from 'express'
 
-import { serverMiddlewares } from './middlewares.js'
+import { errorHandler, serverMiddlewares } from './endpoint/middlewares.js'
+import { controller as mainController } from './endpoint/controller.js'
 import { PORT } from './config.js'
-import { prisma } from './config.js'
 
 const app = express()
 
 app.use(serverMiddlewares)
 
-app.get('/', async (_req, res) => {
-    const airplaines = await prisma.airplane.findMany()
+app.get('/flights/:id/passengers', mainController)
 
-    res.send({
-        msg: airplaines,
-    })
-})
+app.use(errorHandler)
 
 app.listen(PORT, () => {
     console.info(`Server is running on port ${PORT}`)
