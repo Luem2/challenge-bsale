@@ -23,3 +23,18 @@ export const serverMiddlewares = [
         limit: '50mb',
     }),
 ]
+
+/* eslint-disable no-unused-vars */
+export function errorHandler(err, _req, res, _next) {
+    const { status } = err
+
+    if (status === 404) {
+        res.status(status).send({
+            data: {},
+        })
+    } else {
+        res.status(400).json({
+            errors: 'could not connect to db',
+        })
+    }
+}
