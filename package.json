@@ -1,0 +1,30 @@
+{
+    "name": "challenge-bsale",
+    "version": "1.0.0",
+    "description": "Challenge Andes Airlines",
+    "main": "/src/server.js",
+    "type": "module",
+    "scripts": {
+        "dev": "node --watch ./src/server.js",
+        "start": "node ./src/server.js",
+        "lint": "eslint .",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Luciano Piñol",
+    "license": "ISC",
+    "dependencies": {
+        "@prisma/client": "^4.15.0",
+        "cors": "^2.8.5",
+        "dotenv": "^16.1.4",
+        "express": "^4.18.2",
+        "morgan": "^1.10.0"
+    },
+    "devDependencies": {
+        "eslint": "^8.42.0",
+        "prisma": "^4.15.0"
+    },
+    "eslintConfig": {
+        "extends": "standard"
+    }
+}

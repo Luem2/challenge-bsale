@@ -1,0 +1,30 @@
+{
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "globals": {
+        "document": "readonly",
+        "globalThis": "readonly",
+        "console": "readonly"
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+        "indent": ["error", 4],
+        "no-unused-vars": "error",
+        "no-warning-comments": [
+            "warn",
+            { "terms": ["TODO", "FIXME", "REVIEW"], "location": "anywhere" }
+        ],
+        "quotes": ["warn", "single"],
+        "vars-on-top": "error",
+        "no-var": "error",
+        "no-undef": "error",
+        "no-const-assign": "error",
+        "no-console": ["warn", { "allow": ["info", "error", "warn"] }]
+    },
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    }
+}
