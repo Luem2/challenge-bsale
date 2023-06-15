@@ -26,13 +26,17 @@ export const serverMiddlewares = [
 
 /* eslint-disable no-unused-vars */
 export function errorHandler(err, _req, res, _next) {
-    const { status } = err
+    const { message, status } = err
 
     if (status === 404) {
+        console.error(message)
+
         res.status(status).send({
             data: {},
         })
     } else {
+        console.error(message)
+
         res.status(400).json({
             errors: 'could not connect to db',
         })
