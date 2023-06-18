@@ -13,6 +13,7 @@ app.get('/flights/:id/passengers', checkFlight, function (req, res) {
     const airplane = new Airplane(flight.flightId, boardingPass)
 
     res.status(200).send({
+        code: res.statusCode,
         data: {
             ...flight,
             passengers: airplane.getAllPassengers(),

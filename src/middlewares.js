@@ -79,12 +79,14 @@ export function errorHandler(err, _req, res, _next) {
         console.error(message)
 
         res.status(status).send({
+            code: res.statusCode,
             data: {},
         })
     } else {
         console.error(message)
 
         res.status(400).json({
+            code: res.statusCode,
             errors: 'could not connect to db',
         })
     }

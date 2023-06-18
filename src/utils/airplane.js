@@ -27,7 +27,7 @@ const airplaneTwoClassesDimensions = {
     },
 }
 
-// Funcion que segun el id recibido, devuelve las clases del avion y sus respectivas dimensiones.
+// Funcion que segun el id recibido, devuelve las clases del avion y sus respectivas dimensiones e información.
 export function createAirplaneClasses(id) {
     const dimensions =
         id === 1 ? airplaneOneClassesDimensions : airplaneTwoClassesDimensions
@@ -55,7 +55,7 @@ export function createAirplaneClasses(id) {
     }
 }
 
-// Funcion para dividir las columnas (de un clase en especifico) en sectores
+// Funcion para dividir las columnas en sectores (de un clase en específico)
 export function splitClassColumnsBySections(arr) {
     if (arr.length % 2 === 0) {
         const half = arr.length / 2
