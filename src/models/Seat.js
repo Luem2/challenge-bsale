@@ -23,10 +23,12 @@ export class Seat {
                 seatId,
                 passenger,
             } = rawPassenger
+            const { dni, ...restDataPassenger } = passenger
 
             this.passenger = {
                 passengerId,
-                ...passenger,
+                dni: Number(dni),
+                ...restDataPassenger,
                 boardingPassId,
                 purchaseId,
                 seatTypeId: seatTypeId,
