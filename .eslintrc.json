@@ -6,7 +6,8 @@
     "globals": {
         "document": "readonly",
         "globalThis": "readonly",
-        "console": "readonly"
+        "console": "readonly",
+        "Class": "readonly"
     },
     "extends": "eslint:recommended",
     "rules": {
