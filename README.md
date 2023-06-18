@@ -90,7 +90,7 @@ pnpm install
 pnpm dev
 ```
 
-> **Option 2** <br />
+> **Opción 2** <br />
 > En el `Modo Producción` correr el siguiente comando:
 
 ```sh
