@@ -1,5 +1,5 @@
 import { createAirplaneClasses } from '../utils/index.js'
-
+import { Class } from './Class.js'
 export class Airplane {
     constructor(id, boardingPasses) {
         this.id = id
@@ -39,23 +39,12 @@ export class Airplane {
         return airplaneClasses
     }
 
-    // Devuelve la lista de todos los pasajeros del avion
-    getPassengers() {
-        // Aca devuelve la parte de la respuesta final (el arreglo de pasajeros)
-        // Este metodo lo voy a usar en el server.js
-        /*
-        interface Passenger {
-          passengerId: number
-          dni: number
-          name: string
-          age: number
-          country: string
-          boardingPassId: number
-          purchaseId: number
-          seatTypeId: number
-          seatId: number
-        }
-    
-    */
+    // Devuelve la lista de todos los pasajeros del avion (parte de la respuesta final)
+    getAllPassengers() {
+        const sections = this.classes.map((cl) => cl.sections).flat()
+        const seats = sections.map((section) => section.seats).flat(2)
+        const passengers = seats.map((seat) => seat.passenger)
+
+        return passengers.filter((passenger) => passenger !== null)
     }
 }
