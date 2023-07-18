@@ -12,5 +12,4 @@ export const prisma = new PrismaClient({
         },
     },
     errorFormat: 'minimal',
-    log: ['info'],
 })

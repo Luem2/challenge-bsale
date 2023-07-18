@@ -11,6 +11,8 @@ services:
             MYSQL_USER: bsale_test
             MYSQL_PASSWORD: bsale_test
             MYSQL_DATABASE: airline
+        volumes:
+            - ./airline.sql:/docker-entrypoint-initdb.d/airline.sql
         ports:
             - '3306:3306'
 
@@ -19,8 +21,10 @@ services:
         restart: unless-stopped
         image: bsale-server
         environment:
-            DATABASE_URL: mysql://bsale_test:bsale_test@localhost:3306/airline
+            DATABASE_URL: mysql://bsale_test:bsale_test@bsale-mysql:3306/airline?allowPublicKeyRetrieval=true&useSSL=false
             PORT: 3000
+        ports:
+            - '3000:3000'
         build:
             context: .
         depends_on:
