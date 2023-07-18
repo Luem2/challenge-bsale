@@ -71,7 +71,7 @@ export class Class {
                 )
             })
 
-            seatFinded.assignSeat(assignedPassenger)
+            seatFinded?.assignSeat(assignedPassenger)
         }
     }
 
