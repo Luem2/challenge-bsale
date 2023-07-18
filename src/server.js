@@ -21,6 +21,16 @@ app.get('/flights/:id/passengers', checkFlight, function (req, res) {
     })
 })
 
+app.all('*', function (req, res) {
+    const { hostname, protocol } = req
+
+    res.status(404).send({
+        code: res.statusCode,
+        message: 'Not found',
+        example_endpoint: `${protocol}://${hostname}:${PORT}/flights/1/passengers`,
+    })
+})
+
 app.use(errorHandler)
 
 app.listen(PORT, () => {

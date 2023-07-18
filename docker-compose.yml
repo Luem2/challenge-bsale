@@ -1,0 +1,27 @@
+version: '3.8'
+name: challenge-bsale
+
+services:
+    bsale-mysql:
+        container_name: bsale-mysql
+        restart: always
+        image: mysql:latest
+        environment:
+            MYSQL_ROOT_PASSWORD: bsale_test_root
+            MYSQL_USER: bsale_test
+            MYSQL_PASSWORD: bsale_test
+            MYSQL_DATABASE: airline
+        ports:
+            - '3306:3306'
+
+    bsale-server:
+        container_name: bsale-server
+        restart: unless-stopped
+        image: bsale-server
+        environment:
+            DATABASE_URL: mysql://bsale_test:bsale_test@localhost:3306/airline
+            PORT: 3000
+        build:
+            context: .
+        depends_on:
+            - bsale-mysql
