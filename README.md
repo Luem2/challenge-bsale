@@ -64,25 +64,17 @@ Por último, el asiento, en donde tendrá las coordenadas en donde se encuentra 
 git clone https://github.com/luem2/challenge-bsale.git
 ```
 
-2. **Ejecutar los siguientes comandos de Docker en la raíz del proyecto**
-
-_Construir las servicios:_
+2. **Ejecutar el siguiente comando en la raíz del proyecto, para construir y levantar los servicios:**
 
 ```sh
-docker compose build
-```
-
-_Levantar los servicios:_
-
-```sh
-docker compose up -d
+docker compose up -d --build
 ```
 
 3. **Ejecutar el endpoint**:
 
 -   Base URL: [http://localhost:3000/](http://localhost:3000/) </br>
 -   Endpoint: `/flights/:id/passengers`
--   Example: http://localhost:3000/flights/1/passengers
+-   Ejemplo: http://localhost:3000/flights/1/passengers
 
 ## Contacto
 
